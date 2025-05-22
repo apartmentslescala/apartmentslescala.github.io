@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Apartamento en L'Escala - Información</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0; padding: 0;
+    color: #333;
+    line-height: 1.5;
+  }
+  .language-selector {
+    background: #4caf50;
+    padding: 10px;
+    text-align: center;
+  }
+  .language-selector button {
+    background: white;
+    color: #4caf50;
+    border: 1px solid #4caf50;
+    margin: 0 8px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+  }
+  .language-selector button:hover {
+    background: #4caf50;
+    color: white;
+  }
+  .container {
+    max-width: 900px;
+    margin: 25px auto;
+    background: white;
+    padding: 20px 30px 40px 30px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 6px;
+  }
+  h1, h2 {
+    color: #2c3e50;
+  }
+  a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  ol {
+    padding-left: 20px;
+  }
+  iframe {
+    margin-top: 15px;
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+    border: none;
+    border-radius: 6px;
+  }
+  p {
+    margin-top: 15px;
+  }
+  strong {
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<div class="language-selector">
+  <button onclick="changeLanguage('es')">Español</button>
+  <button onclick="changeLanguage('en')">English</button>
+  <button onclick="changeLanguage('fr')">Français</button>
+  <button onclick="changeLanguage('de')">Deutsch</button>
+</div>
+
+<div class="container" id="content">
+  <h1 id="apartment-title">Apartamento en L'Escala</h1>
+
+  <p id="address">
+    <strong>Dirección del apartamento (Se recomienda usar las coordenadas ya que son más precisas):</strong>
+    <a href="https://www.google.com/maps?q=42.1142586,3.1420463" target="_blank" rel="noopener noreferrer">Passatge Av. de Riells-86, 2, L'Escala</a>
+  </p>
+
+  <p id="gps-coordinates">
+    <strong>Coordenadas GPS:</strong>
+    <a href="https://www.google.com/maps?q=42.1142586,3.1420463" target="_blank" rel="noopener noreferrer">42.1142586, 3.1420463</a>
+  </p>
+
+  <p id="gps-note">
+    Los últimos 100 metros antes de llegar al apartamento no se muestran con precisión en Google Maps ni en otros sistemas GPS.
+    Por ello, le enviamos instrucciones detalladas y un vídeo para ayudarle a encontrar el apartamento.
+  </p>
+
+  <h2 id="steps-title">Pasos para llegar al apartamento:</h2>
+  <ol id="steps-list">
+    <li>Diríjase a la calle Naintre en L'Escala.</li>
+    <li>Continúe hasta el final de la calle, donde encontrará el paseo marítimo.</li>
+    <li>Gire a la izquierda en el paseo marítimo.</li>
+    <li>Avance 60 metros y luego gire a la izquierda en la primera calle.</li>
+    <li>Gire a la derecha, vuelva a girar a la derecha y llegará al apartamento. Puede aparcar su coche allí.</li>
+  </ol>
+
+  <h2 id="video-instructions-title">Adjuntamos un vídeo con las indicaciones para llegar al apartamento:</h2>
+  <iframe id="video-instructions" src="https://www.youtube.com/embed/NtiCTefHXL8" allowfullscreen></iframe>
+
+  <h2 id="parking-instructions-title">Instrucciones para aparcar el vehículo:</h2>
+  <p id="parking-instructions-text">
+    Puede aparcar en la misma calle donde se encuentra el apartamento. En dicha calle hay espacio para dos coches y, como tiene acceso por ambos extremos, su vehículo no quedará bloqueado.
+    Si usted es el primer coche en llegar, debe aparcar lo más adelante posible; de lo contrario, no habrá espacio para otro vehículo detrás.
+  </p>
+
+  <h2 id="parking-image-title">Adjuntamos una imagen de ejemplo que muestra cómo aparcar correctamente:</h2>
+  <iframe src="https://drive.google.com/file/d/1lnoow48w4Rb_XAPqAlQkUSUU8RWMTIbQ/preview" allowfullscreen></iframe>
+
+  <p id="parking-note">
+    Tenga en cuenta que, dependiendo de la época del año, puede que no haya espacio disponible en la calle.
+    En ese caso, disponemos de una plaza en un aparcamiento subterráneo privado, a unos 5 minutos a pie del apartamento.
+  </p>
+
+  <p id="parking-advice">
+    Si necesita utilizar esta plaza, le recomendamos que primero se dirija al apartamento, descargue el equipaje y recoja las llaves del parking, que están dentro de la casa (en la figura que hay en el comedor).
+    Una vez que tenga las llaves, puede aparcar en las plazas número 4 o 5 del parking subterráneo.
+  </p>
+
+  <p id="sub-parking-address-label">
+    <strong>Dirección del aparcamiento subterráneo (Se recomienda usar las coordenadas ya que son más precisas):</strong>
+  </p>
+  <p id="sub-parking-address">
+    <a href="https://www.google.com/maps?q=42.115141,3.147975" target="_blank" rel="noopener noreferrer">Carrer Berenguer Mallol, 7, L'Escala</a>
+  </p>
+
+  <p id="sub-parking-coordinates-label">
+    <strong>Coordenadas GPS:</strong>
+  </p>
+  <p id="sub-parking-coordinates">
+    <a href="https://www.google.com/maps?q=42.115141,3.147975" target="_blank" rel="noopener noreferrer">42.115141, 3.147975</a>
+  </p>
+
+  <h2 id="sub-parking-video-title">Adjuntamos también un vídeo con las indicaciones para llegar al aparcamiento:</h2>
+  <iframe id="sub-parking-video" src="https://www.youtube.com/embed/jSyYZTSsnb8" allowfullscreen></iframe>
+
+  <h2 id="keys-location-title">Dónde encontrar las llaves del apartamento:</h2>
+  <p id="keys-location-text">
+    La caja que contiene las llaves se encuentra junto a la puerta de entrada del apartamento.
+    Se abre con el código que le hemos enviado por la web donde hizo la reserva.
+  </p>
+
+  <h2 id="wifi-title">Wifi:</h2>
+  <p id="wifi-info">
+    <strong>Nombre:</strong> INVENCIBLE-5G<br />
+    <strong>Contraseña:</strong> 88888888
+  </p>
+</div>
+
+<script>
+  const translations = {
+    es: {
+      apartmentTitle: "Apartamento en L'Escala",
+      address: "Dirección del apartamento (Se recomienda usar las coordenadas ya que son más precisas):",
+      gpsCoordinatesLabel: "Coordenadas GPS:",
+      gpsNote: "Los últimos 100 metros antes de llegar al apartamento no se muestran con precisión en Google Maps ni en otros sistemas GPS.\nPor ello, le enviamos instrucciones detalladas y un vídeo para ayudarle a encontrar el apartamento.",
+      stepsTitle: "Pasos para llegar al apartamento:",
+      steps: [
+        "Diríjase a la calle Naintre en L'Escala.",
+        "Continúe hasta el final de la calle, donde encontrará el paseo marítimo.",
+        "Gire a la izquierda en el paseo marítimo.",
+        "Avance 60 metros y luego gire a la izquierda en la primera calle.",
+        "Gire a la derecha, vuelva a girar a la derecha y llegará al apartamento. Puede aparcar su coche allí."
+      ],
+      videoInstructionsTitle: "Adjuntamos un vídeo con las indicaciones para llegar al apartamento:",
+      parkingInstructionsTitle: "Instrucciones para aparcar el vehículo:",
+      parkingInstructionsText: "Puede aparcar en la misma calle donde se encuentra el apartamento. En dicha calle hay espacio para dos coches y, como tiene acceso por ambos extremos, su vehículo no quedará bloqueado.\nSi usted es el primer coche en llegar, debe aparcar lo más adelante posible; de lo contrario, no habrá espacio para otro vehículo detrás.",
+      parkingImageTitle: "Adjuntamos una imagen de ejemplo que muestra cómo aparcar correctamente:",
+      parkingNote: "Tenga en cuenta que, dependiendo de la época del año, puede que no haya espacio disponible en la calle.\nEn ese caso, disponemos de una plaza en un aparcamiento subterráneo privado, a unos 5 minutos a pie del apartamento.",
+      parkingAdvice: "Si necesita utilizar esta plaza, le recomendamos que primero se dirija al apartamento, descargue el equipaje y recoja las llaves del parking, que están dentro de la casa (en la figura que hay en el comedor).\nUna vez que tenga las llaves, puede aparcar en las plazas número 4 o 5 del parking subterráneo.",
+      subParkingAddressLabel: "Dirección del aparcamiento subterráneo (Se recomienda usar las coordenadas ya que son más precisas):",
+      subParkingAddress: "Carrer Berenguer Mallol, 7, L'Escala",
+      subParkingCoordinatesLabel: "Coordenadas GPS:",
+      subParkingCoordinates: "42.115141, 3.147975",
+      subParkingVideoTitle: "Adjuntamos también un vídeo con las indicaciones para llegar al aparcamiento:",
+      keysLocationTitle: "Dónde encontrar las llaves del apartamento:",
+      keysLocationText: "La caja que contiene las llaves se encuentra junto a la puerta de entrada del apartamento.\nSe abre con el código que le hemos enviado por la web donde hizo la reserva.",
+      wifiTitle: "Wifi:",
+      wifiInfo: "Nombre: INVENCIBLE-5G\nContraseña: 88888888"
+    },
+    en: {
+      apartmentTitle: "Apartment in L'Escala",
+      address: "Apartment Address (Using coordinates is recommended for accuracy):",
+      gpsCoordinatesLabel: "GPS Coordinates:",
+      gpsNote: "The last 100 meters before reaching the apartment are not precisely shown on Google Maps or other GPS systems.\nTherefore, we provide detailed instructions and a video to help you find the apartment.",
+      stepsTitle: "Steps to reach the apartment:",
+      steps: [
+        "Go to Naintre street in L'Escala.",
+        "Continue to the end of the street where you will find the seaside promenade.",
+        "Turn left onto the promenade.",
+        "Go forward 60 meters, then turn left at the first street.",
+        "Turn right, then turn right again, and you will arrive at the apartment. You can park your car there."
+      ],
+      videoInstructionsTitle: "We attach a video with instructions to reach the apartment:",
+      parkingInstructionsTitle: "Instructions for parking your vehicle:",
+      parkingInstructionsText: "You can park on the same street where the apartment is located. There is space for two cars, and since the street has access from both ends, your vehicle won't be blocked.\nIf you are the first car to arrive, park as far forward as possible; otherwise, there won't be space for another car behind.",
+      parkingImageTitle: "We attach an example image showing how to park correctly:",
+      parkingNote: "Please note that depending on the time of year, there may be no space available on the street.\nIn that case, we have a spot in a private underground parking about a 5-minute walk from the apartment.",
+      parkingAdvice: "If you need to use this parking spot, we recommend you first go to the apartment, unload your luggage, and pick up the parking keys, which are inside the house (in the figurine in the living room).\nOnce you have the keys, you can park in spots number 4 or 5 in the underground parking.",
+      subParkingAddressLabel: "Address of the underground parking (coordinates recommended):",
+      subParkingAddress: "Carrer Berenguer Mallol, 7, L'Escala",
+      subParkingCoordinatesLabel: "GPS Coordinates:",
+      subParkingCoordinates: "42.115141, 3.147975",
+      subParkingVideoTitle: "We also attach a video with instructions to reach the parking:",
+      keysLocationTitle: "Where to find the apartment keys:",
+      keysLocationText: "The box containing the keys is next to the apartment entrance door.\nIt opens with the code we sent you on the website where you made your reservation.",
+      wifiTitle: "Wifi:",
+      wifiInfo: "Name: INVENCIBLE-5G\nPassword: 88888888"
+    },
+    fr: {
+      apartmentTitle: "Appartement à L'Escala",
+      address: "Adresse de l'appartement (Il est recommandé d'utiliser les coordonnées car elles sont plus précises) :",
+      gpsCoordinatesLabel: "Coordonnées GPS :",
+      gpsNote: "Les 100 derniers mètres avant d'arriver à l'appartement ne sont pas affichés avec précision sur Google Maps ni sur d'autres systèmes GPS.\nC'est pourquoi nous vous envoyons des instructions détaillées et une vidéo pour vous aider à trouver l'appartement.",
+      stepsTitle: "Étapes pour arriver à l'appartement :",
+      steps: [
+        "Dirigez-vous vers la rue Naintre à L'Escala.",
+        "Continuez jusqu'au bout de la rue où vous trouverez la promenade maritime.",
+        "Tournez à gauche sur la promenade.",
+        "Avancez de 60 mètres puis tournez à gauche à la première rue.",
+        "Tournez à droite, puis à nouveau à droite, et vous arriverez à l'appartement. Vous pouvez y garer votre voiture."
+      ],
+      videoInstructionsTitle: "Nous joignons une vidéo avec les indications pour arriver à l'appartement :",
+      parkingInstructionsTitle: "Instructions pour garer votre véhicule :",
+      parkingInstructionsText: "Vous pouvez vous garer dans la même rue que l'appartement. Il y a de la place pour deux voitures et comme la rue est accessible par ses deux extrémités, votre véhicule ne sera pas bloqué.\nSi vous êtes la première voiture à arriver, garez-vous le plus en avant possible ; sinon, il n'y aura pas de place pour une autre voiture derrière.",
+      parkingImageTitle: "Nous joignons une image exemple montrant comment se garer correctement :",
+      parkingNote: "Veuillez noter qu'en fonction de la période de l'année, il se peut qu'il n'y ait pas de place disponible dans la rue.\nDans ce cas, nous disposons d'une place dans un parking souterrain privé à environ 5 minutes à pied de l'appartement.",
+      parkingAdvice: "Si vous devez utiliser cette place, nous vous recommandons d'abord de vous rendre à l'appartement, de décharger vos bagages et de récupérer les clés du parking, qui se trouvent dans la maison (dans la figurine du salon).\nUne fois que vous avez les clés, vous pouvez vous garer aux places numéro 4 ou 5 du parking souterrain.",
+      subParkingAddressLabel: "Adresse du parking souterrain (il est recommandé d'utiliser les coordonnées) :",
+      subParkingAddress: "Carrer Berenguer Mallol, 7, L'Escala",
+      subParkingCoordinatesLabel: "Coordonnées GPS :",
+      subParkingCoordinates: "42.115141, 3.147975",
+      subParkingVideoTitle: "Nous joignons également une vidéo avec les indications pour arriver au parking :",
+      keysLocationTitle: "Où trouver les clés de l'appartement :",
+      keysLocationText: "La boîte contenant les clés se trouve à côté de la porte d'entrée de l'appartement.\nElle s'ouvre avec le code que nous vous avons envoyé via le site où vous avez fait la réservation.",
+      wifiTitle: "Wifi :",
+      wifiInfo: "Nom : INVENCIBLE-5G\nMot de passe : 88888888"
+    },
+    de: {
+      apartmentTitle: "Wohnung in L'Escala",
+      address: "Adresse der Wohnung (Es wird empfohlen, die Koordinaten zu verwenden, da diese genauer sind):",
+      gpsCoordinatesLabel: "GPS-Koordinaten:",
+      gpsNote: "Die letzten 100 Meter vor der Wohnung werden in Google Maps oder anderen GPS-Systemen nicht genau angezeigt.\nDaher senden wir Ihnen detaillierte Anweisungen und ein Video, um Ihnen zu helfen, die Wohnung zu finden.",
+      stepsTitle: "Schritte, um zur Wohnung zu gelangen:",
+      steps: [
+        "Gehen Sie zur Naintre-Straße in L'Escala.",
+        "Gehen Sie bis zum Ende der Straße, wo Sie die Strandpromenade finden.",
+        "Biegen Sie links auf die Strandpromenade ab.",
+        "Gehen Sie 60 Meter vorwärts und biegen Sie dann links in die erste Straße ein.",
+        "Biegen Sie rechts ab, dann wieder rechts, und Sie erreichen die Wohnung. Dort können Sie Ihr Auto parken."
+      ],
+      videoInstructionsTitle: "Wir fügen ein Video mit Anweisungen zum Erreichen der Wohnung bei:",
+      parkingInstructionsTitle: "Anweisungen zum Parken Ihres Fahrzeugs:",
+      parkingInstructionsText: "Sie können auf der gleichen Straße parken, in der sich die Wohnung befindet. Dort ist Platz für zwei Autos, und da die Straße an beiden Enden zugänglich ist, wird Ihr Fahrzeug nicht blockiert.\nWenn Sie das erste Auto sind, das ankommt, parken Sie so weit vorne wie möglich; andernfalls gibt es keinen Platz für ein anderes Auto dahinter.",
+      parkingImageTitle: "Wir fügen ein Beispielbild bei, das zeigt, wie man richtig parkt:",
+      parkingNote: "Bitte beachten Sie, dass je nach Jahreszeit möglicherweise kein Platz in der Straße verfügbar ist.\nIn diesem Fall haben wir einen Stellplatz in einer privaten Tiefgarage, etwa 5 Gehminuten von der Wohnung entfernt.",
+      parkingAdvice: "Wenn Sie diesen Stellplatz benutzen müssen, empfehlen wir Ihnen, zuerst zur Wohnung zu gehen, Ihr Gepäck auszuladen und die Parkschlüssel abzuholen, die sich im Haus (in der Figur im Wohnzimmer) befinden.\nSobald Sie die Schlüssel haben, können Sie auf den Parkplätzen Nummer 4 oder 5 in der Tiefgarage parken.",
+      subParkingAddressLabel: "Adresse des Tiefgaragenparkplatzes (Koordinaten werden empfohlen):",
+      subParkingAddress: "Carrer Berenguer Mallol, 7, L'Escala",
+      subParkingCoordinatesLabel: "GPS-Koordinaten:",
+      subParkingCoordinates: "42.115141, 3.147975",
+      subParkingVideoTitle: "Wir fügen auch ein Video mit Anweisungen zum Erreichen des Parkplatzes bei:",
+      keysLocationTitle: "Wo Sie die Wohnungsschlüssel finden:",
+      keysLocationText: "Die Box mit den Schlüsseln befindet sich neben der Eingangstür der Wohnung.\nSie wird mit dem Code geöffnet, den wir Ihnen über die Webseite geschickt haben, auf der Sie reserviert haben.",
+      wifiTitle: "WLAN:",
+      wifiInfo: "Name: INVENCIBLE-5G\nPasswort: 88888888"
+    }
+  };
+
+  function changeLanguage(lang) {
+    const t = translations[lang] || translations['es'];
+    document.getElementById('apartment-title').textContent = t.apartmentTitle;
+    document.getElementById('address').innerHTML =
+      `<strong>${t.address}</strong> <a href="https://www.google.com/maps?q=42.1142586,3.1420463" target="_blank" rel="noopener noreferrer">Passatge Av. de Riells-86, 2, L'Escala</a>`;
+    document.getElementById('gps-coordinates').innerHTML =
+      `<strong>${t.gpsCoordinatesLabel}</strong> <a href="https://www.google.com/maps?q=42.1142586,3.1420463" target="_blank" rel="noopener noreferrer">42.1142586, 3.1420463</a>`;
+    document.getElementById('gps-note').textContent = t.gpsNote;
+
+    document.getElementById('steps-title').textContent = t.stepsTitle;
+    const stepsList = document.getElementById('steps-list');
+    stepsList.innerHTML = '';
+    t.steps.forEach(step => {
+      const li = document.createElement('li');
+      li.textContent = step;
+      stepsList.appendChild(li);
+    });
+
+    document.getElementById('video-instructions-title').textContent = t.videoInstructionsTitle;
+    // Keep same video src (YouTube ID) because video is universal
+    // If needed, replace with localized versions
+
+    document.getElementById('parking-instructions-title').textContent = t.parkingInstructionsTitle;
+    document.getElementById('parking-instructions-text').textContent = t.parkingInstructionsText;
+
+    document.getElementById('parking-image-title').textContent = t.parkingImageTitle;
+
+    document.getElementById('parking-note').textContent = t.parkingNote;
+    document.getElementById('parking-advice').textContent = t.parkingAdvice;
+
+    document.getElementById('sub-parking-address-label').innerHTML = `<strong>${t.subParkingAddressLabel}</strong>`;
+    document.getElementById('sub-parking-address').innerHTML = `<a href="https://www.google.com/maps?q=42.115141,3.147975" target="_blank" rel="noopener noreferrer">${t.subParkingAddress}</a>`;
+    document.getElementById('sub-parking-coordinates-label').innerHTML = `<strong>${t.subParkingCoordinatesLabel}</strong>`;
+    document.getElementById('sub-parking-coordinates').innerHTML = `<a href="https://www.google.com/maps?q=42.115141,3.147975" target="_blank" rel="noopener noreferrer">${t.subParkingCoordinates}</a>`;
+
+    document.getElementById('sub-parking-video-title').textContent = t.subParkingVideoTitle;
+
+    document.getElementById('keys-location-title').textContent = t.keysLocationTitle;
+    document.getElementById('keys-location-text').textContent = t.keysLocationText;
+
+    document.getElementById('wifi-title').textContent = t.wifiTitle;
+    // Replace line breaks with <br> for wifiInfo
+    document.getElementById('wifi-info').innerHTML = t.wifiInfo.replace(/\n/g, '<br>');
+  }
+
+  // Detect language on load and set default
+  window.addEventListener('DOMContentLoaded', () => {
+    const userLang = (navigator.language || navigator.userLanguage).toLowerCase();
+    if (userLang.startsWith('es')) changeLanguage('es');
+    else if (userLang.startsWith('en')) changeLanguage('en');
+    else if (userLang.startsWith('fr')) changeLanguage('fr');
+    else if (userLang.startsWith('de')) changeLanguage('de');
+    else changeLanguage('es');
+  });
+</script>
+
+</body>
+</html>
