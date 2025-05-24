@@ -227,6 +227,35 @@
       wifiTitle: "Wifi:",
       wifiInfo: "Name: INVENCIBLE-5G\nPassword: 88888888"
     },
+    ca: {
+      apartmentTitle: "Informació de l'apartament a L'Escala",
+      address: "Adreça de l'apartament (Recomanem utilitzar coordenades per a més precisió):",
+      gpsCoordinatesLabel: "Coordenades GPS:",
+      gpsNote: "Els últims 100 metres abans d’arribar a l’apartament no es mostren amb precisió a Google Maps ni altres sistemes GPS.\nPer això, proporcionem instruccions detallades i un vídeo per ajudar-te a trobar l’apartament.",
+      stepsTitle: "Passos per arribar a l'apartament:",
+      steps: [
+        "Ves al carrer Naintre de L’Escala.",
+        "Continua fins al final del carrer, on trobaràs el passeig marítim.",
+        "Gira a l’esquerra pel passeig marítim.",
+        "Avança 60 metres i gira a l’esquerra pel primer carrer.",
+        "Gira a la dreta, després torna a girar a la dreta, i arribaràs a l’apartament. Hi pots aparcar el cotxe."
+      ],
+      videoInstructionsTitle: "T’adjuntem un vídeo amb instruccions per arribar a l’apartament:",
+      parkingInstructionsTitle: "Instruccions per aparcar el teu vehicle:",
+      parkingInstructionsText: "Pots aparcar al mateix carrer on es troba l’apartament. Hi ha espai per a dos cotxes i, com que el carrer té accés pels dos extrems, el teu vehicle no quedarà bloquejat.\nSi ets el primer en arribar, aparca tan endavant com puguis; si no, no hi haurà espai per a un altre cotxe al darrere.",
+      parkingImageTitle: "T’adjuntem una imatge d’exemple que mostra com aparcar correctament:",
+      parkingNote: "Tingues en compte que, segons l’època de l’any, pot ser que no hi hagi espai disponible al carrer.\nEn aquest cas, disposem d’una plaça en un aparcament soterrani privat a uns 5 minuts a peu de l’apartament.",
+      parkingAdvice: "Si necessites fer servir aquesta plaça, et recomanem primer anar a l’apartament, descarregar l’equipatge i recollir les claus de l’aparcament, que es troben dins la casa (a la figureta del menjador).\nUn cop tinguis les claus, pots aparcar a les places número 4 o 5 de l’aparcament soterrani.",
+      subParkingAddressLabel: "Adreça de l’aparcament soterrani (recomanem coordenades):",
+      subParkingAddress: "Carrer Berenguer Mallol, 7, L’Escala",
+      subParkingCoordinatesLabel: "Coordenades GPS:",
+      subParkingCoordinates: "42.115141, 3.147975",
+      subParkingVideoTitle: "També t’adjuntem un vídeo amb instruccions per arribar a l’aparcament:",
+      keysLocationTitle: "On trobar les claus de l’apartament:",
+      keysLocationText: "La capsa amb les claus es troba al costat de la porta d’entrada de l’apartament.\nS’obre amb el codi que t’hem enviat a la web on vas fer la reserva.",
+      wifiTitle: "Wifi:",
+      wifiInfo: "Nom: INVENCIBLE-5G\nContrasenya: 88888888"
+    },
     fr: {
       apartmentTitle: "Informations sur l'appartement à L'Escala",
       address: "Adresse de l'appartement (Il est recommandé d'utiliser les coordonnées car elles sont plus précises) :",
@@ -339,7 +368,8 @@
     else if (userLang.startsWith('en')) changeLanguage('en');
     else if (userLang.startsWith('fr')) changeLanguage('fr');
     else if (userLang.startsWith('de')) changeLanguage('de');
-    else changeLanguage('es');
+    else if (userLang.startsWith('ca')) changeLanguage('ca');
+    else changeLanguage('en');
   });
 </script>
 
