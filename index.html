@@ -25,20 +25,17 @@
     justify-content: center;
     z-index: 1000;
   }
-  .language-selector label {
-    margin-right: 8px;
-    color: #555;
-    font-weight: 600;
-    user-select: none;
-  }
+  /* Selector sin label visible y más grande */
   select#language-select {
     border-radius: 20px;
     border: 1px solid #ccc;
-    padding: 6px 14px;
+    padding: 8px 20px;     /* Más padding para hacerlo más alto y ancho */
     font-weight: 600;
+    font-size: 16px;       /* Texto más grande */
     cursor: pointer;
     background-color: white;
     transition: all 0.2s ease;
+    min-width: 160px;      /* Ancho mínimo */
   }
   select#language-select:hover {
     border-color: #4caf50;
@@ -84,6 +81,7 @@
 <body>
 
 <div class="language-selector">
+  <!-- Eliminado el label, solo el selector -->
   <select id="language-select" aria-label="Select language">
     <option value="es">Español</option>
     <option value="en">English</option>
@@ -95,6 +93,7 @@
 </div>
 
 <div class="container" id="content">
+  <!-- Todo el contenido con ids, igual que antes -->
   <h1 id="apartment-title">Apartamento en L'Escala</h1>
 
   <p id="address">
@@ -122,7 +121,7 @@
   </ol>
 
   <h2 id="video-instructions-title">Adjuntamos un vídeo con las indicaciones para llegar al apartamento:</h2>
-  <iframe id="video-instructions" src="https://www.youtube.com/embed/NtiCTefHXL8" allowfullscreen></iframe>
+  <iframe id="video-instructions" src="https://www.youtube.com/embed/mA6GMjVGUdM" allowfullscreen></iframe>
 
   <h2 id="parking-instructions-title">Instrucciones para aparcar el vehículo:</h2>
   <p id="parking-instructions-text">
@@ -175,7 +174,7 @@
 
 <script>
   // Para simular el idioma del dispositivo, cambia este valor a: 'es', 'en', 'fr', 'de', 'it', 'nl'
-  const SIMULATE_DEVICE_LANG = 'it'; // null = detecta automáticamente, o pon 'en' por ejemplo para probar inglés
+  const SIMULATE_DEVICE_LANG = null; // null = detecta automáticamente, o pon 'en' por ejemplo para probar inglés
 
   const translations = {
     es: {
@@ -407,8 +406,8 @@
       userLang = (navigator.language || navigator.userLanguage || 'es').toLowerCase();
     }
 
-    let lang = 'es'; // por defecto español
-    if (userLang.startsWith('es')) lang = 'es';
+    let lang = 'en'; // por defecto español
+    if (userLang.startsWith('es') || userLang.startsWith('ca')) lang = 'es';
     else if (userLang.startsWith('en')) lang = 'en';
     else if (userLang.startsWith('fr')) lang = 'fr';
     else if (userLang.startsWith('de')) lang = 'de';
