@@ -11,18 +11,38 @@
     margin: 0; padding: 0;
     color: #333;
     line-height: 1.5;
+    padding-top: 40px; /* Para que no quede oculto debajo de la barra fija */
   }
   .language-selector {
-    background: #4caf50;
-    padding: 10px;
-    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 40px;
+    background: #fafafa;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  .language-selector label {
+    margin-right: 8px;
+    color: #555;
+    font-weight: 600;
+    user-select: none;
   }
   select#language-select {
-    padding: 8px 16px;
-    font-weight: bold;
-    border-radius: 4px;
-    border: 1px solid #4caf50;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    padding: 6px 14px;
+    font-weight: 600;
     cursor: pointer;
+    background-color: white;
+    transition: all 0.2s ease;
+  }
+  select#language-select:hover {
+    border-color: #4caf50;
+    box-shadow: 0 0 5px #4caf50;
   }
   .container {
     max-width: 900px;
@@ -64,6 +84,7 @@
 <body>
 
 <div class="language-selector">
+  <label for="language-select" aria-label="Select language">Idioma / Language / Langue / Sprache:</label>
   <select id="language-select" aria-label="Select language">
     <option value="es">Español</option>
     <option value="en">English</option>
@@ -154,8 +175,12 @@
 </div>
 
 <script>
+  // Para simular el idioma del dispositivo, cambia este valor a: 'es', 'en', 'fr', 'de', 'it', 'nl'
+  const SIMULATE_DEVICE_LANG = null; // null = detecta automáticamente, o pon 'en' por ejemplo para probar inglés
+
   const translations = {
     es: {
+      pageTitle: "Apartamento en L'Escala - Información",
       apartmentTitle: "Apartamento en L'Escala",
       address: "Dirección del apartamento (Se recomienda usar las coordenadas ya que son más precisas):",
       gpsCoordinatesLabel: "Coordenadas GPS:",
@@ -185,6 +210,7 @@
       wifiInfo: "Nombre: INVENCIBLE-5G\nContraseña: 88888888"
     },
     en: {
+      pageTitle: "Apartment in L'Escala - Information",
       apartmentTitle: "Apartment in L'Escala",
       address: "Apartment Address (Using coordinates is recommended for accuracy):",
       gpsCoordinatesLabel: "GPS Coordinates:",
@@ -214,6 +240,7 @@
       wifiInfo: "Name: INVENCIBLE-5G\nPassword: 88888888"
     },
     fr: {
+      pageTitle: "Appartement à L'Escala - Informations",
       apartmentTitle: "Appartement à L'Escala",
       address: "Adresse de l'appartement (Il est recommandé d'utiliser les coordonnées car elles sont plus précises) :",
       gpsCoordinatesLabel: "Coordonnées GPS :",
@@ -243,6 +270,7 @@
       wifiInfo: "Nom : INVENCIBLE-5G\nMot de passe : 88888888"
     },
     de: {
+      pageTitle: "Wohnung in L'Escala - Informationen",
       apartmentTitle: "Wohnung in L'Escala",
       address: "Adresse der Wohnung (Es wird empfohlen, die Koordinaten zu verwenden, da diese genauer sind):",
       gpsCoordinatesLabel: "GPS-Koordinaten:",
@@ -272,6 +300,7 @@
       wifiInfo: "Name: INVENCIBLE-5G\nPasswort: 88888888"
     },
     it: {
+      pageTitle: "Appartamento a L'Escala - Informazioni",
       apartmentTitle: "Appartamento a L'Escala",
       address: "Indirizzo dell'appartamento (Si consiglia di usare le coordinate per maggiore precisione):",
       gpsCoordinatesLabel: "Coordinate GPS:",
@@ -301,6 +330,7 @@
       wifiInfo: "Nome: INVENCIBLE-5G\nPassword: 88888888"
     },
     nl: {
+      pageTitle: "Appartement in L'Escala - Informatie",
       apartmentTitle: "Appartement in L'Escala",
       address: "Adres van het appartement (Voor nauwkeurigheid wordt het gebruik van coördinaten aanbevolen):",
       gpsCoordinatesLabel: "GPS-coördinaten:",
@@ -333,6 +363,10 @@
 
   function changeLanguage(lang) {
     const t = translations[lang] || translations['es'];
+
+    // Cambiar título pestaña
+    document.title = t.pageTitle;
+
     document.getElementById('apartment-title').textContent = t.apartmentTitle;
     document.getElementById('address').innerHTML =
       `<strong>${t.address}</strong> <a href="https://www.google.com/maps?q=42.1142586,3.1420463" target="_blank" rel="noopener noreferrer">Passatge Av. de Riells-86, 2, L'Escala</a>`;
@@ -368,10 +402,14 @@
 
   window.addEventListener('DOMContentLoaded', () => {
     const select = document.getElementById('language-select');
-    const userLang = (navigator.language || navigator.userLanguage).toLowerCase();
 
-    let lang = 'en';
-    if (userLang.startsWith('es') || userLang.startsWith('ca')) lang = 'es';
+    let userLang = SIMULATE_DEVICE_LANG;
+    if (!userLang) {
+      userLang = (navigator.language || navigator.userLanguage || 'es').toLowerCase();
+    }
+
+    let lang = 'es'; // por defecto español
+    if (userLang.startsWith('es')) lang = 'es';
     else if (userLang.startsWith('en')) lang = 'en';
     else if (userLang.startsWith('fr')) lang = 'fr';
     else if (userLang.startsWith('de')) lang = 'de';
