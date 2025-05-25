@@ -69,8 +69,6 @@
     height: 315px;
     border: none;
     border-radius: 6px;
-    -webkit-overflow-scrolling: touch;
-    touch-action: pan-y;
   }
   p {
     margin-top: 15px;
@@ -83,7 +81,6 @@
 <body>
 
 <div class="language-selector">
-  <!-- Eliminado el label, solo el selector -->
   <select id="language-select" aria-label="Select language">
     <option value="es">Español</option>
     <option value="en">English</option>
@@ -96,7 +93,7 @@
 
 <div class="container" id="content">
   <!-- Todo el contenido con ids, igual que antes -->
-  <h1 id="apartment-title">Apartamento en L'Escala</h1>
+  <h1 id="apartment-title">Información del apartamento en L'Escala</h1>
 
   <p id="address">
     <strong>Dirección del apartamento (Se recomienda usar las coordenadas ya que son más precisas):</strong>
@@ -132,7 +129,10 @@
   </p>
 
   <h2 id="parking-image-title">Adjuntamos una imagen de ejemplo que muestra cómo aparcar correctamente:</h2>
-  <iframe src="https://drive.google.com/file/d/1lnoow48w4Rb_XAPqAlQkUSUU8RWMTIbQ/preview" allowfullscreen></iframe>
+  <img 
+  src="https://github.com/apartmentslescala/apartmentslescala.github.io/blob/main/parkCar.jpg?raw=true" 
+  alt="Ejemplo de aparcamiento correcto" 
+  style="max-width:100%; height:auto; border-radius:6px; margin-top:15px;" />
 
   <p id="parking-note">
     Tenga en cuenta que, dependiendo de la época del año, puede que no haya espacio disponible en la calle.
@@ -181,7 +181,7 @@
   const translations = {
     es: {
       pageTitle: "Apartamento en L'Escala - Información",
-      apartmentTitle: "Apartamento en L'Escala",
+      apartmentTitle: "Información del apartamento en L'Escala",
       address: "Dirección del apartamento (Se recomienda usar las coordenadas ya que son más precisas):",
       gpsCoordinatesLabel: "Coordenadas GPS:",
       gpsNote: "Los últimos 100 metros antes de llegar al apartamento no se muestran con precisión en Google Maps ni en otros sistemas GPS.\nPor ello, le enviamos instrucciones detalladas y un vídeo para ayudarle a encontrar el apartamento.",
@@ -211,7 +211,7 @@
     },
     en: {
       pageTitle: "Apartment in L'Escala - Information",
-      apartmentTitle: "Apartment in L'Escala",
+      apartmentTitle: "Apartment information in L'Escala",
       address: "Apartment Address (Using coordinates is recommended for accuracy):",
       gpsCoordinatesLabel: "GPS Coordinates:",
       gpsNote: "The last 100 meters before reaching the apartment are not precisely shown on Google Maps or other GPS systems.\nTherefore, we provide detailed instructions and a video to help you find the apartment.",
@@ -241,7 +241,7 @@
     },
     fr: {
       pageTitle: "Appartement à L'Escala - Informations",
-      apartmentTitle: "Appartement à L'Escala",
+      apartmentTitle: "Informations sur l'appartement à L'Escala",
       address: "Adresse de l'appartement (Il est recommandé d'utiliser les coordonnées car elles sont plus précises) :",
       gpsCoordinatesLabel: "Coordonnées GPS :",
       gpsNote: "Les 100 derniers mètres avant d'arriver à l'appartement ne sont pas affichés avec précision sur Google Maps ou d'autres systèmes GPS.\nC'est pourquoi nous vous envoyons des instructions détaillées et une vidéo pour vous aider à trouver l'appartement.",
@@ -271,7 +271,7 @@
     },
     de: {
       pageTitle: "Wohnung in L'Escala - Informationen",
-      apartmentTitle: "Wohnung in L'Escala",
+      apartmentTitle: "Informationen zur Wohnung in L'Escala",
       address: "Adresse der Wohnung (Es wird empfohlen, die Koordinaten zu verwenden, da diese genauer sind):",
       gpsCoordinatesLabel: "GPS-Koordinaten:",
       gpsNote: "Die letzten 100 Meter vor der Wohnung werden in Google Maps oder anderen GPS-Systemen nicht genau angezeigt.\nDaher senden wir Ihnen detaillierte Anweisungen und ein Video, um Ihnen zu helfen, die Wohnung zu finden.",
@@ -301,7 +301,7 @@
     },
     it: {
       pageTitle: "Appartamento a L'Escala - Informazioni",
-      apartmentTitle: "Appartamento a L'Escala",
+      apartmentTitle: "Informazioni sull'appartamento a L'Escala",
       address: "Indirizzo dell'appartamento (Si consiglia di usare le coordinate per maggiore precisione):",
       gpsCoordinatesLabel: "Coordinate GPS:",
       gpsNote: "Gli ultimi 100 metri prima di arrivare all'appartamento non sono mostrati con precisione su Google Maps o altri sistemi GPS.\nPer questo forniamo istruzioni dettagliate e un video per aiutarti a trovare l'appartamento.",
@@ -331,7 +331,7 @@
     },
     nl: {
       pageTitle: "Appartement in L'Escala - Informatie",
-      apartmentTitle: "Appartement in L'Escala",
+      apartmentTitle: "Informatie over het appartement in L'Escala",
       address: "Adres van het appartement (Voor nauwkeurigheid wordt het gebruik van coördinaten aanbevolen):",
       gpsCoordinatesLabel: "GPS-coördinaten:",
       gpsNote: "De laatste 100 meter voordat u het appartement bereikt, worden niet nauwkeurig weergegeven op Google Maps of andere GPS-systemen.\nDaarom geven we gedetailleerde instructies en een video om u te helpen het appartement te vinden.",
