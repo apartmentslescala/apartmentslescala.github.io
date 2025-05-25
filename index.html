@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Apartamento en L'Escala - Información</title>
+<title>Apartamento en L'Escala</title> <!-- Título por defecto -->
 <style>
+  /* Tus estilos aquí */
   body {
     font-family: Arial, sans-serif;
     background: #f4f4f4;
@@ -18,12 +19,12 @@
     text-align: center;
   }
   .responsive-img {
-  max-width: 200px;
-  height: auto;
-  display: block;
-  margin-top: 15px;
-  border-radius: 6px;
- }
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin-top: 15px;
+    border-radius: 6px;
+  }
   .language-selector button {
     background: white;
     color: #4caf50;
@@ -158,8 +159,6 @@
 
   <img src="https://raw.githubusercontent.com/apartmentslescala/apartmentslescala.github.io/main/locker.jpg" alt="Locker" class="responsive-img">
 
-
-
   <h2 id="wifi-title">Wifi:</h2>
   <p id="wifi-info">
     <strong>Nombre:</strong> INVENCIBLE-5G<br />
@@ -170,7 +169,8 @@
 <script>
   const translations = {
     es: {
-      apartmentTitle: "Información Apartamento en L'Escala",
+      apartmentTitle: "Apartamento en L'Escala",
+      pageTitle: "Apartamento en L'Escala - Información",
       address: "Dirección del apartamento (Se recomienda usar las coordenadas ya que son más precisas):",
       gpsCoordinatesLabel: "Coordenadas GPS:",
       gpsNote: "Los últimos 100 metros antes de llegar al apartamento no se muestran con precisión en Google Maps ni en otros sistemas GPS.\nPor ello, le enviamos instrucciones detalladas y un vídeo para ayudarle a encontrar el apartamento.",
@@ -199,7 +199,8 @@
       wifiInfo: "Nombre: INVENCIBLE-5G\nContraseña: 88888888"
     },
     en: {
-      apartmentTitle: "Apartment Information  in L'Escala",
+      apartmentTitle: "Apartment in L'Escala",
+      pageTitle: "Apartment in L'Escala - Information",
       address: "Apartment Address (Using coordinates is recommended for accuracy):",
       gpsCoordinatesLabel: "GPS Coordinates:",
       gpsNote: "The last 100 meters before reaching the apartment are not precisely shown on Google Maps or other GPS systems.\nTherefore, we provide detailed instructions and a video to help you find the apartment.",
@@ -228,7 +229,8 @@
       wifiInfo: "Name: INVENCIBLE-5G\nPassword: 88888888"
     },
     ca: {
-      apartmentTitle: "Informació de l'apartament a L'Escala",
+      apartmentTitle: "Apartament a L'Escala",
+      pageTitle: "Apartament a L'Escala - Informació",
       address: "Adreça de l'apartament (Recomanem utilitzar coordenades per a més precisió):",
       gpsCoordinatesLabel: "Coordenades GPS:",
       gpsNote: "Els últims 100 metres abans d’arribar a l’apartament no es mostren amb precisió a Google Maps ni altres sistemes GPS.\nPer això, proporcionem instruccions detallades i un vídeo per ajudar-te a trobar l’apartament.",
@@ -257,7 +259,8 @@
       wifiInfo: "Nom: INVENCIBLE-5G\nContrasenya: 88888888"
     },
     fr: {
-      apartmentTitle: "Informations sur l'appartement à L'Escala",
+      apartmentTitle: "Appartement à L'Escala",
+      pageTitle: "Appartement à L'Escala - Informations",
       address: "Adresse de l'appartement (Il est recommandé d'utiliser les coordonnées car elles sont plus précises) :",
       gpsCoordinatesLabel: "Coordonnées GPS :",
       gpsNote: "Les 100 derniers mètres avant d'arriver à l'appartement ne sont pas affichés avec précision sur Google Maps ni sur d'autres systèmes GPS.\nC'est pourquoi nous vous envoyons des instructions détaillées et une vidéo pour vous aider à trouver l'appartement.",
@@ -286,7 +289,8 @@
       wifiInfo: "Nom : INVENCIBLE-5G\nMot de passe : 88888888"
     },
     de: {
-      apartmentTitle: "Wohnungsinformationen in L'Escala",
+      apartmentTitle: "Wohnung in L'Escala",
+      pageTitle: "Wohnung in L'Escala - Informationen",
       address: "Adresse der Wohnung (Es wird empfohlen, die Koordinaten zu verwenden, da diese genauer sind):",
       gpsCoordinatesLabel: "GPS-Koordinaten:",
       gpsNote: "Die letzten 100 Meter vor der Wohnung werden in Google Maps oder anderen GPS-Systemen nicht genau angezeigt.\nDaher senden wir Ihnen detaillierte Anweisungen und ein Video, um Ihnen zu helfen, die Wohnung zu finden.",
@@ -318,6 +322,8 @@
 
   function changeLanguage(lang) {
     const t = translations[lang] || translations['es'];
+    document.title = t.pageTitle; // Cambiar título pestaña
+
     document.getElementById('apartment-title').textContent = t.apartmentTitle;
     document.getElementById('address').innerHTML =
       `<strong>${t.address}</strong> <a href="https://www.google.com/maps?q=42.1142586,3.1420463" target="_blank" rel="noopener noreferrer">Passatge Av. de Riells-86, 2, L'Escala</a>`;
@@ -335,8 +341,6 @@
     });
 
     document.getElementById('video-instructions-title').textContent = t.videoInstructionsTitle;
-    // Keep same video src (YouTube ID) because video is universal
-    // If needed, replace with localized versions
 
     document.getElementById('parking-instructions-title').textContent = t.parkingInstructionsTitle;
     document.getElementById('parking-instructions-text').textContent = t.parkingInstructionsText;
@@ -357,11 +361,9 @@
     document.getElementById('keys-location-text').textContent = t.keysLocationText;
 
     document.getElementById('wifi-title').textContent = t.wifiTitle;
-    // Replace line breaks with <br> for wifiInfo
     document.getElementById('wifi-info').innerHTML = t.wifiInfo.replace(/\n/g, '<br>');
   }
 
-  // Detect language on load and set default
   window.addEventListener('DOMContentLoaded', () => {
     const userLang = (navigator.language || navigator.userLanguage).toLowerCase();
     if (userLang.startsWith('es')) changeLanguage('es');
